@@ -1,0 +1,75 @@
+<div>
+<div class="dropdown nava">
+	SomeNote
+  <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="jt">
+   <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu ha" role="menu" aria-labelledby="dLabel">
+    <li ng-click="xqb()">所有日记</li>
+    <li>标签:<span class="label label-default" ng-click="xsb('不开心')">不开心</span><span class="label label-default" ng-click="xsb('奋斗')">奋斗</span><span class="label label-default" ng-click="xsb('高兴')">高兴</span><span class="label label-default" ng-click="xsb('美好的')">美好的</span><span class="label label-default" ng-click="xsb('酸酸的')">酸酸的</span></li>
+    <li ng-click="tc()">退出</li>
+  </ul>
+</div>
+<div class="panel panel-warning nav" ng-repeat="x in data">
+  <div class="panel-heading" ui-sref="xg({id:x.id,title:x.title,content:x.content})">
+    <h3 class="panel-title">{{x.title}}</h3>
+  </div>
+  <div class="panel-body" ui-sref="xg({id:x.id,title:x.title,content:x.content})">
+    {{x.content}}
+    <br /><span  class="label label-info" ng-repeat="xx in x.tag">{{xx}}</span>
+  </div>
+  <span class="glyphicon glyphicon-trash" ng-click="sc(x)"></span>
+</div>
+
+
+<button type="button" class="btn btn-info hy" ng-click="jz(-5)">上一页</button>
+<button type="button" class="btn btn-info hg" ng-click="jz(5)">下一页</button>
+<button ui-sref="tj" class="tianjia">+</button>
+</div>
+<style>
+    .nava{
+	   background:#222222;
+	   height:50px;
+	   color:#3F6C95;
+	   padding-top:2%;
+	   padding-left:2%;
+	   padding-right:2%;
+    }
+	.hy{
+		margin-top:30px;
+		margin-left:22%;
+	}
+	.hg{
+		margin-top:30px;
+		margin-left:8%;
+	}
+	.ha{
+		width:100%;
+	}
+	.ha li{
+		padding-left:2%;
+		cursor:pointer;
+	}
+	.ha li:hover{
+		background:#333333;
+	}
+	.jt{
+		float:right;
+		background:#333333;
+	}
+	/*.nav{
+		margin-top:20px;
+	}*/
+   .tianjia{
+  position: fixed;
+  bottom:20px;
+  left:50%;
+  margin-left: -30px;
+  width:60px;
+  height:60px;
+  font-size: 30px;
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+</style>

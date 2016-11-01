@@ -1,0 +1,15 @@
+<div class="container ng-scope">
+	<form class="form-signin ng-pristine ng-valid" role="form"> 
+		<div class="page-header"> 
+			<h1 class="form-signin-heading text-primary text-center">Somenote</h1> 
+			<h6 class="text-center">请登陆</h6> 
+		</div>
+		<input ng-model="updata.username" type="text" class="form-control" placeholder="Username" required="" autofocus=""> <br> 
+		<input type="password" ng-model="updata.password" class="form-control" placeholder="Password" required="">
+		<div class="checkbox">
+			<label> <input type="checkbox" ng-model="aa" value="remember-me" ng-click="aac(aa)"> &nbsp;7天免登陆 </label>
+		</div> 
+		<button ng-click="add()" class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
+		<button ui-sref="zc" class="btn btn-lg btn-default btn-block" type="submit">用户注册</button>
+	</form> 
+</div>
